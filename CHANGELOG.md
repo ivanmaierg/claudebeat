@@ -35,6 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `commands/pick.md` save invocation now correctly prefixes `CLAUDE_PLUGIN_ROOT` and `CLAUDE_PLUGIN_DATA` env vars so `play.mjs` receives them in Claude Code's sandboxed Bash context
 - `commands/settings.md` save invocation now correctly prefixes `CLAUDE_PLUGIN_ROOT` and `CLAUDE_PLUGIN_DATA` env vars; without the prefix, settings changes were silently discarded (`config.json` was never written)
+- Replaced `t.plan()` usage in test suite with manual assertion counting — fixes Node 18.x CI failure (`scripts/recurring.integration.test.mjs`)
 
 ### Notes
 

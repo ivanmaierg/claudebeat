@@ -33,8 +33,6 @@ function isPidAlive(pid) {
 }
 
 test("recurring loop: lock created, then exits when stop flag is touched", async (t) => {
-  t.plan(4);
-
   const dir = await mkdtemp(path.join(tmpdir(), "cb-recurring-integ-"));
   const lockPath = path.join(dir, "recurring.lock");
   const stopPath = path.join(dir, "recurring.stop");
