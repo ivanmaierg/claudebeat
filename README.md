@@ -4,6 +4,7 @@
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-plugin-orange)](https://code.claude.com/docs/en/plugins.md)
 [![CI](https://github.com/ivanmaierg/claudebeat/actions/workflows/ci.yml/badge.svg)](https://github.com/ivanmaierg/claudebeat/actions/workflows/ci.yml)
 [![Version](https://img.shields.io/badge/version-0.2.1-green.svg)](CHANGELOG.md)
+[![Live demo](https://img.shields.io/badge/demo-ivanmaierg.github.io%2Fclaudebeat-purple)](https://ivanmaierg.github.io/claudebeat/)
 
 **Chiptune notification sounds for Claude Code** — short 8-bit cues that fire when Claude needs your attention.
 
