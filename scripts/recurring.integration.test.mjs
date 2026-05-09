@@ -65,8 +65,8 @@ test("recurring loop: lock created, then exits when stop flag is touched", async
       assert.fail("recurring.lock should exist after child starts");
     }
     const lock = JSON.parse(lockRaw);
-    t.assert.ok(lock.pid > 0, "lock should contain a valid PID");
-    t.assert.ok(isPidAlive(lock.pid), "child process should be alive");
+    assert.ok(lock.pid > 0, "lock should contain a valid PID");
+    assert.ok(isPidAlive(lock.pid), "child process should be alive");
 
     // Touch the stop flag
     const now = new Date();
@@ -90,8 +90,8 @@ test("recurring loop: lock created, then exits when stop flag is touched", async
       }
     }
 
-    t.assert.ok(lockGone, "recurring.lock should be removed after stop flag is set");
-    t.assert.ok(!isPidAlive(lock.pid), "child process should have exited");
+    assert.ok(lockGone, "recurring.lock should be removed after stop flag is set");
+    assert.ok(!isPidAlive(lock.pid), "child process should have exited");
   } finally {
     await rm(dir, { recursive: true, force: true });
   }
