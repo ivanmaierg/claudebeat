@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="claudebeat — notification sounds for Claude Code. Preview and install in seconds.">
+  <title>claudebeat</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23D97706'/><text x='16' y='23' font-size='18' text-anchor='middle' font-family='monospace' fill='white'>cb</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>claudebeat</h1>
+    <p class="tagline">Notification sounds for Claude Code</p>
+  </header>
+
+  <main>
+
+    <section class="hero" aria-label="Installation">
+      <pre aria-label="Install commands"><code>/plugin marketplace add ivanmaierg/claudebeat
+/plugin install claudebeat</code></pre>
+      <a href="https://github.com/ivanmaierg/claudebeat" target="_blank" rel="noopener" class="gh-link">View on GitHub</a>
+    </section>
+
+    <section class="demos" aria-label="Sound previews">
+      <h2>Preview sounds</h2>
+      <p>The cues claudebeat plays when Claude Code needs you. Click any to preview.</p>
+      <div class="sound-grid">
+        <button data-sound="pixel" type="button">&#9654; Pixel</button>
+        <button data-sound="halo" type="button">&#9654; Halo</button>
+        <button data-sound="thock" type="button">&#9654; Thock</button>
+        <button data-sound="ring" type="button">&#9654; Ring</button>
+        <button data-sound="blip" type="button">&#9654; Blip</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Built by <strong>Ivan Maier Gallardo</strong> &mdash; <a href="https://github.com/ivanmaierg/claudebeat" target="_blank" rel="noopener">github.com/ivanmaierg/claudebeat</a></p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('[data-sound]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.sound;
+        new Audio(`sounds/${id}.wav`).play().catch(err => console.warn('audio play failed:', err));
+      });
+    });
+  </script>
+
+</body>
+</html>
