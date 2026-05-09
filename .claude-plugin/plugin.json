@@ -1,7 +1,7 @@
 {
   "name": "claudebeat",
   "description": "Plays a short 8-bit chiptune cue when Claude needs your attention. Eight NES/Game Boy voices to pick from.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": {
     "name": "Ivan Maierg",
     "email": "ivantero8@gmail.com"

@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.1] - 2026-05-09
+
+### Changed
+
+- README: added a `## Why claudebeat` section so the motivation is up front, not implicit
+- README: picker example now matches the actual rendered output (grouped Markdown table with `▸` current-default marker), not the legacy flat numbered list
+- README: settings count corrected from 11 to 13 (`enableNotification` and `enablePermission` were added in 0.2.0)
+- README: Standalone CLI section labeled as developer-only with a one-line clarification
+- README: added an "Upgrading from `claudebeat-local`?" callout under Install for users migrating from the pre-public local marketplace
+
 ## [0.2.0] - 2026-05-09
 
 ### Added
@@ -12,7 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Slash command renamed from `/claudebeat:claudebeat` to `/claudebeat:pick` — shorter and more descriptive
 - Conversational picker polish: shows current default at top, `s` shortcut to save, short re-prompt after preview
 - Standalone CLI `scripts/pick.mjs` with `--list` (human-readable and `--json`), `--save <id>`, `--help`, and `settings` sub-mode (arrow-key TUI)
-- `/claudebeat:settings` slash command for conversational walkthrough of all 11 settings
+- `/claudebeat:settings` slash command for conversational walkthrough of all 13 settings
 - `scripts/config-helpers.mjs` — shared config read/write/validate/merge layer (pure, fully tested)
 - `scripts/throttle.mjs` — pure throttle logic with `shouldPlay`, `recordPlay`, atomic `throttle.json` state
 - Throttle: `cooldownSeconds` and `maxPerMinute` userConfig keys wired into hook mode

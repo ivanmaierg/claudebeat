@@ -1,6 +1,6 @@
 {
   "name": "claudebeat",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A Claude Code plugin that plays a short audio cue when Claude needs your attention.",
   "type": "module",
   "engines": {

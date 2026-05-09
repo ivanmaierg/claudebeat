@@ -6,6 +6,14 @@ Eight NES/Game Boy voices — square waves, triangle, noise — pick the one tha
 
 ---
 
+## Why claudebeat
+
+Claude Code can run for minutes — long enough that you walk away, switch tabs, or get distracted. The terminal's visual notifications are easy to miss when the window isn't focused. Sound isn't.
+
+Eight short cues, each well under a second, chosen so they don't get annoying after the hundredth play. Pick the one that fits your work and you'll know — without looking — when Claude needs you.
+
+---
+
 ## Install
 
 ```
@@ -15,6 +23,19 @@ Eight NES/Game Boy voices — square waves, triangle, noise — pick the one tha
 
 > **Minimum Claude Code version**: `2.0.0`
 > See [Troubleshooting](#troubleshooting) if you get a `CLAUDE_PLUGIN_ROOT unset` error.
+
+### Upgrading from `claudebeat-local`?
+
+If you previously installed via a local marketplace named `claudebeat-local`, switch to the public one:
+
+```
+/plugin marketplace remove claudebeat-local
+/plugin marketplace add ivanmaierg/claudebeat
+/plugin install claudebeat
+/reload-plugins
+```
+
+Your saved default sound (`config.json`) carries over automatically — no need to re-pick.
 
 ---
 
@@ -27,28 +48,31 @@ Every time Claude finishes thinking and waits for you, you'll hear a sound.
 
 Type `/claudebeat:pick` in Claude Code to open the conversational sound picker.
 
-The picker shows your current default, lets you preview any sound by number or name, and saves your choice with `s`:
+The picker shows your current default, renders the catalog as a grouped Markdown table with `▸` marking the active default, lets you preview any sound by number or name, and saves your choice with `s`:
 
 ```
-Current default: chiptune/pixel
+> Current default: chiptune/pixel
 
-Here are your claudebeat sounds — all 8-bit chiptune:
+### Chiptune / 8-bit
 
-  1. pixel    — Two-note square-wave blip C5→G5. Classic NES motif. The default.
-  2. blip     — Single A5 square-wave snap. Arcade cursor select.
-  ...
+_NES and Game Boy voices: pulse, triangle, and noise channels._
 
-Type a number or name to preview it.
-Which next? (s=save, q=quit, list=show all)
+| #   | Sound   | ID                 | Description                                       |
+|-----|---------|--------------------|---------------------------------------------------|
+| ▸ 1 | Pixel   | chiptune/pixel     | Two-note square-wave blip, C5 to G5...            |
+|   2 | Blip    | chiptune/blip      | Single A5 square-wave snap...                     |
+|   ...
+
+Type a number or name to preview. (s = save · q = quit · list = show all)
 ```
 
 ### Configure settings with `/claudebeat:settings`
 
-Type `/claudebeat:settings` to walk through all 11 settings one at a time — sound choices, throttle, and recurring options.
+Type `/claudebeat:settings` to manage all 13 settings — sound choices, event toggles, throttle, and recurring options. The picker renders the full state as three grouped tables (Sounds & events / Throttling / Recurring reminders), and you change values one at a time without a forced sequential walkthrough.
 
-### Standalone CLI
+### Standalone CLI _(developers only)_
 
-You can also run the picker directly from the terminal:
+For people who have cloned the repo. Marketplace-installed users should use the slash commands above — the CLI assumes you're running from the project root.
 
 ```bash
 # Interactive arrow-key TUI (requires real TTY)
