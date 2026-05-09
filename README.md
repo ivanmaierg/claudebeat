@@ -8,13 +8,9 @@ Eight NES/Game Boy voices — square waves, triangle, noise — pick the one tha
 
 ## Install
 
-```bash
-# From the Claude Code marketplace (once published)
-/plugin add ivanmaierg/claudebeat
-
-# Or from source (development / pre-release)
-git clone https://github.com/ivanmaierg/claudebeat.git
-# Then install the local path via Claude Code plugin management
+```
+/plugin marketplace add ivanmaierg/claudebeat
+/plugin install claudebeat
 ```
 
 > **Minimum Claude Code version**: `2.0.0`
@@ -58,8 +54,8 @@ You can also run the picker directly from the terminal:
 # Interactive arrow-key TUI (requires real TTY)
 node scripts/pick.mjs
 
-# Or via npm scripts
-npm run pick
+# Or via pnpm scripts
+pnpm run pick
 
 # List all sounds
 node scripts/pick.mjs --list
@@ -70,7 +66,7 @@ node scripts/pick.mjs --save chiptune/halo
 
 # Settings TUI
 node scripts/pick.mjs settings
-npm run settings
+pnpm run settings
 
 # Help
 node scripts/pick.mjs --help
@@ -260,10 +256,10 @@ Plugin code AND audio assets are MIT — see [`LICENSE`](LICENSE).
 
 ```bash
 # Run unit tests
-npm test
+pnpm test
 
 # Verify license compliance
-npm run check-licenses
+pnpm run check-licenses
 
 # Preview a sound manually
 CLAUDE_PLUGIN_ROOT=$(pwd) node scripts/play.mjs --preview chiptune/pixel
@@ -278,7 +274,7 @@ CLAUDE_PLUGIN_ROOT=$(pwd) CLAUDE_PLUGIN_DATA=/tmp/cb-test node scripts/pick.mjs 
 1. Add a synth script: `scripts/synth/<id>.mjs` (use existing scripts as templates)
 2. Run it to render: `node scripts/synth/<id>.mjs`
 3. Add an entry to `sounds/index.json` with `license: "MIT"`, `source: "scripts/synth/<id>.mjs"`, and the file's SHA-256
-4. Run `npm run check-licenses` — must pass
+4. Run `pnpm run check-licenses` — must pass
 
 ---
 

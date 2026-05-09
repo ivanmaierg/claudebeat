@@ -24,14 +24,20 @@ jobs:
         with:
           node-version: "20.x"
 
+      - name: Enable corepack
+        run: corepack enable
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
       - name: Run unit tests
-        run: node --test scripts/*.test.mjs
+        run: pnpm test
         env:
           CI: "true"
           CLAUDE_PLUGIN_ROOT: ${{ github.workspace }}
 
       - name: License gate (belt-and-suspenders)
-        run: node scripts/check-licenses.mjs
+        run: pnpm run check-licenses
 
       - name: Extract version from tag
         id: version
@@ -49,20 +55,36 @@ jobs:
           body: |
             ## claudebeat v${{ steps.version.outputs.VERSION }}
 
-            A Claude Code plugin that plays a short audio cue when Claude needs your attention.
+            A Claude Code plugin that plays a short 8-bit chiptune cue when Claude needs your attention.
 
-            ### Sounds included
-            - **lofi/whisper** — Soft tape hiss, warm tone (default)
-            - **lofi/lattice** — Single muted marimba note, slow decay
-            - **lofi/halo** — Vinyl bell with a touch of crackle
-            - **chiptune/pixel** — Crisp NES-style blip, two notes up
+            ### Install
+
+            ```
+            /plugin marketplace add ivanmaierg/claudebeat
+            /plugin install claudebeat
+            ```
+
+            ### Sounds included (8 chiptune)
+
+            | ID | Name | Voice | Description |
+            |----|------|-------|-------------|
+            | `chiptune/pixel` | Pixel | Pulse wave | Two-note square-wave blip, C5→G5. Classic NES motif. **Default.** |
+            | `chiptune/blip` | Blip | Pulse wave | Single A5 square-wave snap. Arcade cursor select. |
+            | `chiptune/click` | Click | Noise (bandpassed) | Sharp UI-style click. Bandpassed white-noise burst. |
+            | `chiptune/ring` | Ring | Pulse wave | Two-beep pulse trill at A5. Old landline ring, condensed. |
+            | `chiptune/whisper` | Whisper | Noise channel | Quiet white-noise hush, low-passed. Barely-there. |
+            | `chiptune/lattice` | Lattice | Triangle wave | Single G4 note with NES decay envelope. Soft Game Boy lead. |
+            | `chiptune/halo` | Halo | Dual pulse | Two pulse waves a perfect fifth apart with synced decay. Powerup-confirm chime. |
+            | `chiptune/thock` | Thock | Pulse + noise | Low pulse body + filtered noise click. NES drum punch. |
+
+            All sounds are original syntheses produced via ffmpeg — MIT licensed.
 
             ### Platform support
             - macOS: `afplay` (built-in, always present)
             - Linux: `paplay` (PulseAudio) → `aplay` (ALSA fallback)
             - Windows: PowerShell `SoundPlayer`
 
-            See [README.md](README.md) for install instructions and customization.
+            See [README.md](README.md) for full customization options and troubleshooting.
           files: claudebeat-${{ steps.version.outputs.VERSION }}.tar.gz
           draft: false
           prerelease: ${{ contains(github.ref_name, '-') }}

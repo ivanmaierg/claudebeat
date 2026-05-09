@@ -22,6 +22,6 @@ SOFTWARE.
 
 ---
 
-NOTE: This license covers the code only (manifest, scripts, commands, workflows).
-The bundled audio assets in sounds/ are CC0 (public domain). See README.md
-for the CC0 attribution table and LICENSES/*.txt for per-file provenance.
+NOTE: This license covers both the code (manifest, scripts, commands, workflows)
+and the bundled audio assets in sounds/. All sounds are original syntheses
+produced via ffmpeg and are MIT-licensed. No third-party audio is bundled.

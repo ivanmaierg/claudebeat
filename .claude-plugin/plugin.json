@@ -1,7 +1,7 @@
 {
   "name": "claudebeat",
   "description": "Plays a short 8-bit chiptune cue when Claude needs your attention. Eight NES/Game Boy voices to pick from.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "Ivan Maierg",
     "email": "ivantero8@gmail.com"
@@ -17,6 +17,18 @@
       "title": "Default sound",
       "default": "chiptune/pixel",
       "description": "Default sound id to play for all events. Format: <pack>/<id> (e.g. chiptune/pixel, chiptune/ring). See sounds/index.json for available ids."
+    },
+    "enableNotification": {
+      "type": "boolean",
+      "title": "Enable Notification event sound",
+      "default": true,
+      "description": "Play a sound on Notification events (Claude waiting for input). Enabled by default."
+    },
+    "enablePermission": {
+      "type": "boolean",
+      "title": "Enable PermissionRequest event sound",
+      "default": true,
+      "description": "Play a sound on PermissionRequest events. Enabled by default."
     },
     "enableStop": {
       "type": "boolean",

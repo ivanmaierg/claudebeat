@@ -26,8 +26,14 @@ jobs:
       - name: Verify Node version
         run: node --version
 
+      - name: Enable corepack
+        run: corepack enable
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
       - name: Run unit tests
-        run: node --test scripts/*.test.mjs
+        run: pnpm test
         env:
           # Ensure CI flag is set so dispatcher skips playback during tests
           CI: "true"
@@ -35,4 +41,4 @@ jobs:
           CLAUDE_PLUGIN_ROOT: ${{ github.workspace }}
 
       - name: License gate
-        run: node scripts/check-licenses.mjs
+        run: pnpm run check-licenses
