@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  test:
+    name: Unit tests + License gate
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: ["18.x", "20.x", "22.x"]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Verify Node version
+        run: node --version
+
+      - name: Run unit tests
+        run: node --test scripts/*.test.mjs
+        env:
+          # Ensure CI flag is set so dispatcher skips playback during tests
+          CI: "true"
+          # Provide a mock CLAUDE_PLUGIN_ROOT pointing to this repo for tests
+          CLAUDE_PLUGIN_ROOT: ${{ github.workspace }}
+
+      - name: License gate
+        run: node scripts/check-licenses.mjs

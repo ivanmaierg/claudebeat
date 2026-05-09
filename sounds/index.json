@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "packs": {
+    "chiptune": {
+      "label": "Chiptune / 8-bit",
+      "description": "NES and Game Boy voices: pulse, triangle, and noise channels. Eight short cues for any mood.",
+      "sounds": [
+        {
+          "id": "pixel",
+          "label": "Pixel",
+          "description": "Two-note square-wave blip, C5 to G5. Classic NES motif. The default.",
+          "file": "chiptune/pixel.wav",
+          "duration_ms": 160,
+          "license": "MIT",
+          "source": "scripts/synth/pixel.mjs",
+          "sha256": "f611a354187349353b343203474400f983247ab09942d1a5b1922048d4dede05"
+        },
+        {
+          "id": "blip",
+          "label": "Blip",
+          "description": "Single A5 square-wave snap. Arcade cursor select — short and crisp.",
+          "file": "chiptune/blip.wav",
+          "duration_ms": 70,
+          "license": "MIT",
+          "source": "scripts/synth/blip.mjs",
+          "sha256": "b2924e56447dfd5cf45255482b91d69b10a88b90095d54c2f1b13c0e4fa355ac"
+        },
+        {
+          "id": "click",
+          "label": "Click",
+          "description": "Sharp UI-style click — bandpassed white-noise burst. Tiny and crisp.",
+          "file": "chiptune/click.wav",
+          "duration_ms": 12,
+          "license": "MIT",
+          "source": "scripts/synth/click.mjs",
+          "sha256": "9683c3a2630a83dcc7acad94346221c8d1a66fee869fafff616f2c87414af134"
+        },
+        {
+          "id": "ring",
+          "label": "Ring",
+          "description": "Two-beep pulse-wave trill at A5. Old landline ring, condensed.",
+          "file": "chiptune/ring.wav",
+          "duration_ms": 160,
+          "license": "MIT",
+          "source": "scripts/synth/ring.mjs",
+          "sha256": "6a03730ff683fbfc63fb71cd487c367486589c75579a4a47c6fc4cad89604a46"
+        },
+        {
+          "id": "whisper",
+          "label": "Whisper",
+          "description": "Quiet NES-style white noise, low-passed. Barely-there.",
+          "file": "chiptune/whisper.wav",
+          "duration_ms": 700,
+          "license": "MIT",
+          "source": "scripts/synth/whisper.mjs",
+          "sha256": "3cb4a7454d0e0c34e6053d860d75917957baa6f0512c01db80e5e23f22cf4034"
+        },
+        {
+          "id": "lattice",
+          "label": "Lattice",
+          "description": "Triangle wave at G4 with NES-style decay. Soft Game Boy lead, patient.",
+          "file": "chiptune/lattice.wav",
+          "duration_ms": 800,
+          "license": "MIT",
+          "source": "scripts/synth/lattice.mjs",
+          "sha256": "4e8cb1050369c1cbf4d3cea05c0b2f4288b6c2da392ce9c4d68abc1cf053e295"
+        },
+        {
+          "id": "halo",
+          "label": "Halo",
+          "description": "Two pulse waves a perfect fifth apart with synced decay. NES powerup-confirm chime.",
+          "file": "chiptune/halo.wav",
+          "duration_ms": 1000,
+          "license": "MIT",
+          "source": "scripts/synth/halo.mjs",
+          "sha256": "83b874b45cc6543c0909b8040fe972dabb3e9ba2838c2b02118b52938f738cb2"
+        },
+        {
+          "id": "thock",
+          "label": "Thock",
+          "description": "Low pulse wave plus filtered noise click. NES drum punch — percussive, not melodic.",
+          "file": "chiptune/thock.wav",
+          "duration_ms": 90,
+          "license": "MIT",
+          "source": "scripts/synth/thock.mjs",
+          "sha256": "846f7f631bf2e6092826e3db47b452ec48f5475d7589344e6821545477c980db"
+        }
+      ]
+    }
+  }
+}

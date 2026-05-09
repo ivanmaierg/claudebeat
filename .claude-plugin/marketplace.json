@@ -1,0 +1,13 @@
+{
+  "name": "claudebeat-local",
+  "owner": {
+    "name": "Ivan Maierg",
+    "email": "ivantero8@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "claudebeat",
+      "source": "./"
+    }
+  ]
+}

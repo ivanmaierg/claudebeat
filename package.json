@@ -1,0 +1,34 @@
+{
+  "name": "claudebeat",
+  "version": "0.1.0",
+  "description": "A Claude Code plugin that plays a short audio cue when Claude needs your attention.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test scripts/*.test.mjs",
+    "check-licenses": "node scripts/check-licenses.mjs",
+    "pick": "node scripts/pick.mjs",
+    "settings": "node scripts/pick.mjs settings"
+  },
+  "devDependencies": {
+  },
+  "keywords": [
+    "claude-code",
+    "plugin",
+    "notification",
+    "sound",
+    "audio",
+    "lofi",
+    "chiptune"
+  ],
+  "author": "Ivan Maierg <ivantero8@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ivanmaierg/claudebeat"
+  },
+  "homepage": "https://github.com/ivanmaierg/claudebeat#readme"
+}

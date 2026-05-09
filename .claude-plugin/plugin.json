@@ -1,0 +1,82 @@
+{
+  "name": "claudebeat",
+  "description": "Plays a short 8-bit chiptune cue when Claude needs your attention. Eight NES/Game Boy voices to pick from.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Ivan Maierg",
+    "email": "ivantero8@gmail.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/ivanmaierg/claudebeat#readme",
+  "repository": "https://github.com/ivanmaierg/claudebeat",
+  "keywords": ["notification", "sound", "audio", "chiptune", "8bit", "nes", "attention"],
+  "minClaudeCodeVersion": "2.0.0",
+  "userConfig": {
+    "defaultSound": {
+      "type": "string",
+      "title": "Default sound",
+      "default": "chiptune/pixel",
+      "description": "Default sound id to play for all events. Format: <pack>/<id> (e.g. chiptune/pixel, chiptune/ring). See sounds/index.json for available ids."
+    },
+    "enableStop": {
+      "type": "boolean",
+      "title": "Enable Stop event sound",
+      "default": false,
+      "description": "Play a sound when Claude finishes responding (Stop event). Disabled by default — can be frequent."
+    },
+    "notificationSound": {
+      "type": "string",
+      "title": "Notification sound",
+      "default": "",
+      "description": "Sound id or absolute .wav path for Notification events. Falls back to defaultSound if empty."
+    },
+    "permissionSound": {
+      "type": "string",
+      "title": "Permission request sound",
+      "default": "",
+      "description": "Sound id or absolute .wav path for PermissionRequest events. Falls back to defaultSound if empty."
+    },
+    "stopSound": {
+      "type": "string",
+      "title": "Stop event sound",
+      "default": "",
+      "description": "Sound id or absolute .wav path for Stop events (requires enableStop: true). Falls back to defaultSound if empty."
+    },
+    "volume": {
+      "type": "number",
+      "title": "Volume",
+      "default": 1.0,
+      "description": "Playback volume (0.0 to 1.0). macOS only — ignored on Linux and Windows (afplay -v limitation). Use the OS mixer on other platforms."
+    },
+    "cooldownSeconds": {
+      "type": "number",
+      "title": "Cooldown (seconds)",
+      "default": 0,
+      "description": "Minimum seconds between sounds. 0 = disabled. When > 0, the hook skips playback if another sound played within this window."
+    },
+    "maxPerMinute": {
+      "type": "number",
+      "title": "Max plays per minute",
+      "default": 0,
+      "description": "Maximum sounds per 60-second sliding window. 0 = disabled. When the limit is reached the hook skips playback."
+    },
+    "recurringUntilInput": {
+      "type": "boolean",
+      "title": "Recurring reminder until input",
+      "default": false,
+      "description": "Spawn a recurring child process that replays the notification sound every recurringIntervalSeconds until user input is detected. Note: the first sound plays ~60 s after Claude finishes (Claude Code idle_prompt delay). Disabled by default."
+    },
+    "recurringIntervalSeconds": {
+      "type": "number",
+      "title": "Recurring interval (seconds)",
+      "default": 60,
+      "description": "How often (in seconds) the recurring reminder plays after the first sound. Requires recurringUntilInput: true."
+    },
+    "recurringMaxDurationSeconds": {
+      "type": "number",
+      "title": "Recurring max duration (seconds)",
+      "default": 300,
+      "description": "Maximum total time (in seconds) the recurring loop runs before auto-stopping. Orphan safety valve. Requires recurringUntilInput: true."
+    }
+  }
+}
