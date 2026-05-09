@@ -1,8 +1,13 @@
 # claudebeat
 
-A Claude Code plugin that plays a short 8-bit chiptune cue when Claude needs your attention.
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-plugin-orange)](https://code.claude.com/docs/en/plugins.md)
+[![CI](https://github.com/ivanmaierg/claudebeat/actions/workflows/ci.yml/badge.svg)](https://github.com/ivanmaierg/claudebeat/actions/workflows/ci.yml)
+[![Version](https://img.shields.io/badge/version-0.2.1-green.svg)](CHANGELOG.md)
 
-Eight NES/Game Boy voices — square waves, triangle, noise — pick the one that fits your work.
+**Chiptune notification sounds for Claude Code** — short 8-bit cues that fire when Claude needs your attention.
+
+Eight NES/Game Boy voices — pulse waves, triangle, noise — pick the one that fits your session.
 
 ---
 

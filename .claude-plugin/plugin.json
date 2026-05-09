@@ -9,7 +9,23 @@
   "license": "MIT",
   "homepage": "https://github.com/ivanmaierg/claudebeat#readme",
   "repository": "https://github.com/ivanmaierg/claudebeat",
-  "keywords": ["notification", "sound", "audio", "chiptune", "8bit", "nes", "attention"],
+  "keywords": [
+    "claude-code-plugin",
+    "notification",
+    "notification-sound",
+    "sound",
+    "sound-effects",
+    "audio",
+    "audio-cues",
+    "chiptune",
+    "8bit",
+    "nes",
+    "retro",
+    "attention",
+    "focus",
+    "dx",
+    "developer-experience"
+  ],
   "minClaudeCodeVersion": "2.0.0",
   "userConfig": {
     "defaultSound": {
