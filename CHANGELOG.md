@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - README: settings count corrected from 11 to 13 (`enableNotification` and `enablePermission` were added in 0.2.0)
 - README: Standalone CLI section labeled as developer-only with a one-line clarification
 - README: added an "Upgrading from `claudebeat-local`?" callout under Install for users migrating from the pre-public local marketplace
+- Author/owner metadata updated to `Ivan Maier Gallardo <ivanmaiergallardo@gmail.com>` across `plugin.json`, `package.json`, and `marketplace.json`
 
 ## [0.2.0] - 2026-05-09
 
